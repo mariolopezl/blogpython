@@ -12,18 +12,27 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+# # Quick-start development settings - unsuitable for production
+# # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
+
+# # SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = 'django-insecure-cs9k2nk0(rj(y5_udol2v@2s(xs@zd__7q$dh+eytryb%b$c$g'
+
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
+
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-cs9k2nk0(rj(y5_udol2v@2s(xs@zd__7q$dh+eytryb%b$c$g'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
+SECRET_KEY = env('SECRET_KEY')
 
 ALLOWED_HOSTS = []
 
