@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = env('DEBUG')
 SECRET_KEY = env('SECRET_KEY')
 
-ALLOWED_HOSTS = ['https://maralblog.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['maralblog.herokuapp.com','127.0.0.1']
 
 
 # Application definition
