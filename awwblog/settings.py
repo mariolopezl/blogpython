@@ -19,8 +19,8 @@ env = environ.Env()
 environ.Env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = env('DEBUG')
-SECRET_KEY = env('SECRET_KEY')
+DEBUG = os.environ.get('DJANGO_DEBUG','')!='False'
+SECRET_KEY = os.environ.get('django-insecure-cs9k2nk0(rj(y5_udol2v@2s(xs@zd__7q$dh+eytryb%b$c$g')
 
 ALLOWED_HOSTS = ['maralblog.herokuapp.com','127.0.0.1']
 
